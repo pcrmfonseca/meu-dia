@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-title" content="Meu Dia">
 <meta name="theme-color" content="#FBF7F4">
 <title>Meu Dia — Patricia</title>
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 680 680'%3E%3Crect width='680' height='680' rx='152' fill='%237B2D42'/%3E%3Cellipse cx='340' cy='240' rx='52' ry='88' fill='%23C4768A' opacity='0.7' transform='rotate(0 340 340)'/%3E%3Cellipse cx='340' cy='240' rx='52' ry='88' fill='%23C4768A' opacity='0.65' transform='rotate(45 340 340)'/%3E%3Cellipse cx='340' cy='240' rx='52' ry='88' fill='%23C4768A' opacity='0.6' transform='rotate(90 340 340)'/%3E%3Cellipse cx='340' cy='240' rx='52' ry='88' fill='%23C4768A' opacity='0.65' transform='rotate(135 340 340)'/%3E%3Cellipse cx='340' cy='240' rx='52' ry='88' fill='%23C4768A' opacity='0.6' transform='rotate(180 340 340)'/%3E%3Cellipse cx='340' cy='240' rx='52' ry='88' fill='%23C4768A' opacity='0.65' transform='rotate(225 340 340)'/%3E%3Cellipse cx='340' cy='240' rx='52' ry='88' fill='%23C4768A' opacity='0.6' transform='rotate(270 340 340)'/%3E%3Cellipse cx='340' cy='240' rx='52' ry='88' fill='%23C4768A' opacity='0.65' transform='rotate(315 340 340)'/%3E%3Cellipse cx='340' cy='265' rx='38' ry='66' fill='%23DFA0AE' opacity='0.85' transform='rotate(22 340 340)'/%3E%3Cellipse cx='340' cy='265' rx='38' ry='66' fill='%23DFA0AE' opacity='0.8' transform='rotate(67 340 340)'/%3E%3Cellipse cx='340' cy='265' rx='38' ry='66' fill='%23DFA0AE' opacity='0.85' transform='rotate(112 340 340)'/%3E%3Cellipse cx='340' cy='265' rx='38' ry='66' fill='%23DFA0AE' opacity='0.8' transform='rotate(157 340 340)'/%3E%3Cellipse cx='340' cy='265' rx='38' ry='66' fill='%23DFA0AE' opacity='0.85' transform='rotate(202 340 340)'/%3E%3Cellipse cx='340' cy='265' rx='38' ry='66' fill='%23DFA0AE' opacity='0.8' transform='rotate(247 340 340)'/%3E%3Cellipse cx='340' cy='265' rx='38' ry='66' fill='%23DFA0AE' opacity='0.85' transform='rotate(292 340 340)'/%3E%3Cellipse cx='340' cy='265' rx='38' ry='66' fill='%23DFA0AE' opacity='0.8' transform='rotate(337 340 340)'/%3E%3Cellipse cx='340' cy='288' rx='24' ry='44' fill='%23F5EDE5' opacity='0.9' transform='rotate(0 340 340)'/%3E%3Cellipse cx='340' cy='288' rx='24' ry='44' fill='%23F5EDE5' opacity='0.85' transform='rotate(60 340 340)'/%3E%3Cellipse cx='340' cy='288' rx='24' ry='44' fill='%23F5EDE5' opacity='0.9' transform='rotate(120 340 340)'/%3E%3Cellipse cx='340' cy='288' rx='24' ry='44' fill='%23F5EDE5' opacity='0.85' transform='rotate(180 340 340)'/%3E%3Cellipse cx='340' cy='288' rx='24' ry='44' fill='%23F5EDE5' opacity='0.9' transform='rotate(240 340 340)'/%3E%3Cellipse cx='340' cy='288' rx='24' ry='44' fill='%23F5EDE5' opacity='0.85' transform='rotate(300 340 340)'/%3E%3Ccircle cx='340' cy='340' r='28' fill='%23ECD8CB'/%3E%3Ccircle cx='340' cy='340' r='16' fill='%23F5EDE5'/%3E%3Cline x1='340' y1='430' x2='340' y2='510' stroke='%239A3D55' stroke-width='5' stroke-linecap='round'/%3E%3Cellipse cx='317' cy='468' rx='18' ry='9' fill='%239A3D55' opacity='0.7' transform='rotate(-35 317 468)'/%3E%3Cellipse cx='363' cy='478' rx='18' ry='9' fill='%239A3D55' opacity='0.7' transform='rotate(35 363 478)'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -185,6 +185,43 @@ svg.ring{transform:rotate(-90deg)}
 .bnav-btn.active{color:var(--wine)}
 .bnav-icon{font-size:17px;line-height:1}
 
+
+/* MANIFESTAÇÃO */
+.manif-card-frase{background:linear-gradient(135deg,var(--wine) 0%,var(--wine-soft) 100%);border-radius:16px;padding:1.25rem 1.25rem 1rem;position:relative;overflow:hidden}
+.manif-card-frase::after{content:'"';position:absolute;right:14px;top:-4px;font-size:80px;color:rgba(255,255,255,.08);font-family:'Playfair Display',serif;line-height:1}
+.manif-frase-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.5rem;font-weight:500}
+.manif-frase-text{font-family:'Playfair Display',serif;font-size:1rem;color:white;line-height:1.55;font-style:italic;min-height:48px}
+.manif-frase-actions{display:flex;gap:.6rem;margin-top:.85rem}
+.manif-fav-btn{padding:.3rem .8rem;border-radius:20px;border:1px solid rgba(255,255,255,.3);background:none;color:rgba(255,255,255,.75);font-size:11px;cursor:pointer;font-family:'Jost',sans-serif;transition:all .2s}
+.manif-fav-btn:hover,.manif-fav-btn.faved{background:rgba(255,255,255,.15);color:white;border-color:rgba(255,255,255,.6)}
+.manif-fav-btn.faved{color:#FFD6E0}
+.manif-next-btn{padding:.3rem .8rem;border-radius:20px;border:none;background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);font-size:11px;cursor:pointer;font-family:'Jost',sans-serif;transition:all .2s}
+.manif-next-btn:hover{background:rgba(255,255,255,.2)}
+.manif-box{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1rem;margin-bottom:.5rem}
+.manif-box-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:.5rem;font-weight:500}
+.manif-textarea{width:100%;min-height:100px;background:none;border:none;outline:none;font-family:'Playfair Display',serif;font-size:13px;color:var(--ink);line-height:1.65;resize:none;font-style:italic}
+.manif-textarea::placeholder{color:var(--ink-light)}
+.afirm-card{background:var(--white);border:1px solid var(--border);border-radius:11px;padding:.75rem .95rem;margin-bottom:.38rem;display:flex;align-items:center;gap:.65rem;transition:border-color .2s}
+.afirm-card:hover{border-color:var(--rose-light)}
+.afirm-check{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--nude-mid);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;color:transparent;cursor:pointer;transition:all .25s}
+.afirm-card.read .afirm-check{background:var(--rose);border-color:var(--rose);color:white}
+.afirm-text{font-size:13px;flex:1;font-family:'Playfair Display',serif;font-style:italic;color:var(--ink);line-height:1.4}
+.afirm-card.read .afirm-text{color:var(--ink-light)}
+.fav-card{background:var(--rose-pale);border:1px solid var(--rose-light);border-radius:11px;padding:.75rem .95rem;margin-bottom:.38rem;display:flex;align-items:flex-start;gap:.65rem}
+.fav-icon{color:var(--rose);font-size:14px;margin-top:1px}
+.fav-text{font-size:12px;font-family:'Playfair Display',serif;font-style:italic;color:var(--wine);flex:1;line-height:1.5}
+.fav-del{background:none;border:none;cursor:pointer;color:var(--nude-mid);font-size:16px;opacity:0;transition:opacity .2s}
+.fav-card:hover .fav-del{opacity:1}
+.tema-row{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.75rem}
+.tema-chip{padding:.3rem .75rem;border-radius:20px;border:1px solid var(--border);background:var(--white);font-size:11px;cursor:pointer;color:var(--ink-mid);transition:all .2s;font-family:'Jost',sans-serif}
+.tema-chip:hover{border-color:var(--rose-light)}
+.tema-chip.active{background:var(--rose-pale);border-color:var(--rose);color:var(--wine);font-weight:500}
+.banco-card{background:var(--white);border:1px solid var(--border);border-radius:11px;padding:.75rem .95rem;margin-bottom:.38rem;display:flex;align-items:flex-start;gap:.65rem;transition:border-color .2s}
+.banco-card:hover{border-color:var(--rose-light)}
+.banco-text{font-size:13px;font-family:'Playfair Display',serif;font-style:italic;color:var(--ink);flex:1;line-height:1.5}
+.banco-add-btn{background:none;border:none;cursor:pointer;color:var(--ink-light);font-size:18px;padding:0;transition:color .2s;line-height:1;flex-shrink:0;margin-top:1px}
+.banco-add-btn:hover{color:var(--wine)}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .task-card,.hcard,.hist-day,.wo-day{animation:fadeUp .22s ease both}
 </style>
@@ -316,6 +353,60 @@ svg.ring{transform:rotate(-90deg)}
       <div id="hist-content"></div>
     </div>
 
+    <!-- MANIFESTAÇÃO -->
+    <div id="panel-manif" class="panel">
+
+      <div class="manif-card-frase" id="frase-do-dia-card">
+        <div class="manif-frase-label">✦ frase do dia</div>
+        <div class="manif-frase-text" id="frase-do-dia-text"></div>
+        <div class="manif-frase-actions">
+          <button class="manif-fav-btn" id="frase-fav-btn" onclick="toggleFraseFav()">♡ favoritar</button>
+          <button class="manif-next-btn" onclick="proximaFrase()">outra →</button>
+        </div>
+      </div>
+
+      <div class="sec-head" style="margin-top:1.1rem">
+        <span class="sec-title">Manifestação do dia</span>
+      </div>
+      <div class="manif-box">
+        <div class="manif-box-label">Escreva como se já fosse realidade…</div>
+        <textarea class="manif-textarea" id="manif-textarea" placeholder="Hoje eu sou grata por... Eu já tenho... Eu me permito..." oninput="saveManif()"></textarea>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="sec-head">
+        <span class="sec-title">Minhas afirmações</span>
+        <span class="sec-count" id="afirm-count"></span>
+      </div>
+      <div id="afirm-list"></div>
+      <div class="add-area">
+        <input class="add-inp" id="afirm-inp" placeholder="Escreva sua afirmação…" onkeydown="if(event.key==='Enter')addAfirm()">
+        <button class="add-btn" onclick="addAfirm()">+</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="sec-head">
+        <span class="sec-title">Favoritas</span>
+        <span class="sec-count" id="fav-count"></span>
+      </div>
+      <div id="fav-list"></div>
+
+      <div class="divider"></div>
+
+      <div class="sec-head"><span class="sec-title">Banco de frases</span></div>
+      <div class="tema-row" id="tema-row">
+        <button class="tema-chip active" onclick="setTema('todas',this)">Todas</button>
+        <button class="tema-chip" onclick="setTema('fe',this)">🙏 Fé</button>
+        <button class="tema-chip" onclick="setTema('abundancia',this)">💰 Abundância</button>
+        <button class="tema-chip" onclick="setTema('proposito',this)">🎯 Propósito</button>
+        <button class="tema-chip" onclick="setTema('negocio',this)">🚀 Negócio</button>
+      </div>
+      <div id="banco-list"></div>
+
+    </div>
+
   </div>
 
   <div class="bottom-nav">
@@ -324,6 +415,9 @@ svg.ring{transform:rotate(-90deg)}
     </button>
     <button class="bnav-btn" id="bnav-week" onclick="switchView('week')">
       <span class="bnav-icon">📅</span>Semana
+    </button>
+    <button class="bnav-btn" id="bnav-manif" onclick="switchView('manif')">
+      <span class="bnav-icon">✨</span>Manifesto
     </button>
     <button class="bnav-btn" id="bnav-hist" onclick="switchView('hist')">
       <span class="bnav-icon">🕰</span>Histórico
@@ -634,12 +728,14 @@ function goToday(){ viewDate=realToday; if(currentView!=='day')switchView('day')
 
 function switchView(v){
   currentView=v;
-  ['day','week','hist'].forEach(id=>{
+  ['day','week','hist','manif'].forEach(id=>{
     document.getElementById('panel-'+id).classList.toggle('active',id===v);
-    document.getElementById('bnav-'+id).classList.toggle('active',id===v);
+    const bn=document.getElementById('bnav-'+id);
+    if(bn) bn.classList.toggle('active',id===v);
   });
   if(v==='week') renderWeekOverview();
   if(v==='hist') renderHistory();
+  if(v==='manif') renderManif();
   document.getElementById('scroll').scrollTop=0;
 }
 
@@ -648,6 +744,183 @@ function renderDay(){
   restoreEnergy(); renderTasks(viewDate); renderHabits(viewDate); updateRings(viewDate);
   document.getElementById('scroll').scrollTop=0;
   if(currentView!=='day') switchView('day');
+}
+
+
+// ── MANIFESTAÇÃO ─────────────────────────────────────────────────────
+const BANCO_FRASES = [
+  {text:'Tudo o que preciso já está dentro de mim.', tema:'proposito'},
+  {text:'Sou guiada por uma força maior que organiza tudo para o meu bem.', tema:'fe'},
+  {text:'Meu negócio cresce de forma consistente e abundante todos os dias.', tema:'negocio'},
+  {text:'Eu recebo dinheiro com facilidade e gratidão.', tema:'abundancia'},
+  {text:'Sou capaz de criar resultados extraordinários com o que tenho agora.', tema:'negocio'},
+  {text:'A prosperidade é meu estado natural.', tema:'abundancia'},
+  {text:'Eu confio no processo — cada passo me aproxima do que desejo.', tema:'fe'},
+  {text:'Minha voz tem valor. Meu conteúdo transforma vidas.', tema:'proposito'},
+  {text:'Eu sou disciplinada, focada e consistente.', tema:'proposito'},
+  {text:'O dinheiro é uma ferramenta de bem no mundo, e ele flui para mim.', tema:'abundancia'},
+  {text:'Deus vai na minha frente e prepara o caminho.', tema:'fe'},
+  {text:'Cada ação que tomo hoje constrói o futuro que desejo.', tema:'negocio'},
+  {text:'Eu mereço viver com abundância, saúde e propósito.', tema:'abundancia'},
+  {text:'Minha história é prova de que é possível — e eu sigo avançando.', tema:'proposito'},
+  {text:'Eu sou abençoada e altamente favorecida.', tema:'fe'},
+  {text:'Meu negócio digital impacta pessoas e gera riqueza genuína.', tema:'negocio'},
+  {text:'Eu escolho o foco sobre a distração, todos os dias.', tema:'proposito'},
+  {text:'A riqueza que busco já está vindo ao meu encontro.', tema:'abundancia'},
+  {text:'Sou criativa, estratégica e capaz de resolver qualquer desafio.', tema:'negocio'},
+  {text:'Eu opero com fé — não com medo.', tema:'fe'},
+];
+
+let fraseAtualIdx = 0;
+let temaAtual = 'todas';
+
+function getFrasesDia(){
+  // Usa a data para escolher a frase do dia de forma determinística
+  const d = new Date(viewDate+'T12:00');
+  const seed = d.getFullYear()*10000 + (d.getMonth()+1)*100 + d.getDate();
+  return seed % BANCO_FRASES.length;
+}
+
+function renderFraseDia(){
+  const idx = fraseAtualIdx >= 0 ? fraseAtualIdx : getFrasesDia();
+  const f = BANCO_FRASES[idx % BANCO_FRASES.length];
+  document.getElementById('frase-do-dia-text').textContent = f.text;
+  // check if faved
+  const favs = S.manifesto?.favs || [];
+  const faved = favs.includes(f.text);
+  const btn = document.getElementById('frase-fav-btn');
+  btn.textContent = faved ? '♥ favoritada' : '♡ favoritar';
+  btn.className = 'manif-fav-btn' + (faved ? ' faved' : '');
+}
+
+function proximaFrase(){
+  fraseAtualIdx = (fraseAtualIdx + 1) % BANCO_FRASES.length;
+  renderFraseDia();
+}
+
+function toggleFraseFav(){
+  if(!S.manifesto) S.manifesto = {favs:[], afirms:[], dias:{}};
+  if(!S.manifesto.favs) S.manifesto.favs = [];
+  const idx = fraseAtualIdx >= 0 ? fraseAtualIdx : getFrasesDia();
+  const f = BANCO_FRASES[idx % BANCO_FRASES.length];
+  const pos = S.manifesto.favs.indexOf(f.text);
+  if(pos >= 0) S.manifesto.favs.splice(pos,1); else S.manifesto.favs.push(f.text);
+  persist(); renderFraseDia(); renderFavs();
+}
+
+let manifTimer;
+function saveManif(){
+  clearTimeout(manifTimer);
+  manifTimer = setTimeout(()=>{
+    if(!S.manifesto) S.manifesto = {favs:[],afirms:[],dias:{}};
+    if(!S.manifesto.dias) S.manifesto.dias = {};
+    S.manifesto.dias[viewDate] = document.getElementById('manif-textarea').value;
+    persist();
+  }, 500);
+}
+
+function restoreManif(){
+  const val = S.manifesto?.dias?.[viewDate] || '';
+  document.getElementById('manif-textarea').value = val;
+}
+
+function addAfirm(){
+  const inp = document.getElementById('afirm-inp');
+  const v = inp.value.trim(); if(!v) return;
+  if(!S.manifesto) S.manifesto = {favs:[],afirms:[],dias:{}};
+  if(!S.manifesto.afirms) S.manifesto.afirms = [];
+  S.manifesto.afirms.push({text:v, read:false});
+  inp.value = ''; persist(); renderAfirms();
+}
+
+function toggleAfirm(i){
+  S.manifesto.afirms[i].read = !S.manifesto.afirms[i].read;
+  persist(); renderAfirms();
+}
+
+function removeAfirm(i){
+  S.manifesto.afirms.splice(i,1); persist(); renderAfirms();
+}
+
+function renderAfirms(){
+  const list = document.getElementById('afirm-list');
+  const afirms = S.manifesto?.afirms || [];
+  const readCount = afirms.filter(a=>a.read).length;
+  document.getElementById('afirm-count').textContent = readCount + ' de ' + afirms.length;
+  list.innerHTML = '';
+  if(!afirms.length){
+    list.innerHTML = '<div class="empty-state">Escreva afirmações que resonam com você.</div>'; return;
+  }
+  afirms.forEach((a,i)=>{
+    const card = document.createElement('div');
+    card.className = 'afirm-card' + (a.read?' read':'');
+    card.innerHTML = `<div class="afirm-check" onclick="toggleAfirm(${i})">${a.read?'✓':''}</div>
+      <span class="afirm-text">${a.text}</span>
+      <button class="del-btn" onclick="removeAfirm(${i})" style="opacity:0">×</button>`;
+    card.querySelector('.del-btn').style.opacity='0';
+    card.onmouseenter=()=>card.querySelector('.del-btn').style.opacity='1';
+    card.onmouseleave=()=>card.querySelector('.del-btn').style.opacity='0';
+    list.appendChild(card);
+  });
+}
+
+function renderFavs(){
+  const list = document.getElementById('fav-list');
+  const favs = S.manifesto?.favs || [];
+  document.getElementById('fav-count').textContent = favs.length;
+  list.innerHTML = '';
+  if(!favs.length){
+    list.innerHTML = '<div class="empty-state">Favorite frases que te tocam ❤</div>'; return;
+  }
+  favs.forEach((f,i)=>{
+    const card = document.createElement('div');
+    card.className = 'fav-card';
+    card.innerHTML = `<span class="fav-icon">♥</span>
+      <span class="fav-text">${f}</span>
+      <button class="fav-del" onclick="removeFav(${i})">×</button>`;
+    list.appendChild(card);
+  });
+}
+
+function removeFav(i){
+  S.manifesto.favs.splice(i,1); persist(); renderFavs(); renderFraseDia();
+}
+
+function setTema(tema, btn){
+  temaAtual = tema;
+  document.querySelectorAll('.tema-chip').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderBanco();
+}
+
+function addFromBanco(text){
+  if(!S.manifesto) S.manifesto = {favs:[],afirms:[],dias:{}};
+  if(!S.manifesto.afirms) S.manifesto.afirms = [];
+  if(S.manifesto.afirms.some(a=>a.text===text)) return;
+  S.manifesto.afirms.push({text, read:false});
+  persist(); renderAfirms();
+}
+
+function renderBanco(){
+  const list = document.getElementById('banco-list');
+  const frases = temaAtual==='todas' ? BANCO_FRASES : BANCO_FRASES.filter(f=>f.tema===temaAtual);
+  list.innerHTML = '';
+  frases.forEach(f=>{
+    const card = document.createElement('div');
+    card.className = 'banco-card';
+    card.innerHTML = `<span class="banco-text">${f.text}</span>
+      <button class="banco-add-btn" onclick="addFromBanco('${f.text.replace(/'/g,"\'")}')" title="Adicionar às minhas afirmações">+</button>`;
+    list.appendChild(card);
+  });
+}
+
+function renderManif(){
+  fraseAtualIdx = getFrasesDia();
+  renderFraseDia();
+  restoreManif();
+  renderAfirms();
+  renderFavs();
+  renderBanco();
 }
 
 function render(){ renderDay(); }
