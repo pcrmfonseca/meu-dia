@@ -18,14 +18,18 @@
   --wine:#7B2D42;--wine-soft:#9A3D55;
   --rose:#E8919F;--rose-light:#F2C4CE;--rose-pale:#FDF0F3;
   --nude:#F5EDE5;--nude-deep:#ECD8CB;
-  --safe-top:env(safe-area-inset-top,0px);--safe-bottom:env(safe-area-inset-bottom,0px);
+  --safe-top:env(safe-area-inset-top,20px);
+  --safe-bottom:env(safe-area-inset-bottom,20px);
+  --safe-left:env(safe-area-inset-left,0px);
+  --safe-right:env(safe-area-inset-right,0px);
+  --side-pad:1.1rem;
 }
 html,body{height:100%;overflow:hidden}
 body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;display:flex;flex-direction:column}
 .app{display:flex;flex-direction:column;height:100%;max-width:480px;margin:0 auto;width:100%}
 
 /* TOPBAR */
-.topbar{padding:calc(var(--safe-top)+12px) 1.25rem 10px;display:flex;align-items:center;justify-content:space-between;background:var(--bg);border-bottom:1px solid var(--border);flex-shrink:0}
+.topbar{padding:calc(var(--safe-top)+12px) max(1.25rem,var(--safe-left)) 10px;padding-right:max(1.25rem,var(--safe-right));display:flex;align-items:center;justify-content:space-between;background:var(--bg);border-bottom:1px solid var(--border);flex-shrink:0}
 .app-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--ink)}
 .app-name em{font-style:italic;color:var(--wine)}
 .topbar-date{font-size:11px;color:var(--ink-light);letter-spacing:.1em;text-transform:uppercase;margin-top:1px}
@@ -34,25 +38,25 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink);font-we
 .day-pill{font-size:10px;padding:3px 10px;border-radius:10px;background:var(--wine);color:white;font-weight:500;cursor:pointer;border:none;font-family:'Jost',sans-serif}
 
 /* TODAY/WEEKLY/MONTHLY TABS */
-.view-tabs{display:flex;background:var(--bg);padding:.55rem 1.25rem .4rem;gap:.5rem;border-bottom:1px solid var(--border);flex-shrink:0}
+.view-tabs{display:flex;background:var(--bg);padding:.55rem max(1.25rem,var(--safe-left)) .4rem;padding-right:max(1.25rem,var(--safe-right));gap:.5rem;border-bottom:1px solid var(--border);flex-shrink:0}
 .view-tab{flex:1;text-align:center;padding:.4rem 0;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);font-weight:500;cursor:pointer;border-radius:8px;transition:all .2s;background:none;border:none;font-family:'Jost',sans-serif}
 .view-tab.active{background:var(--wine);color:white}
 
 /* WEEK STRIP */
-.week-strip{display:flex;background:var(--bg);padding:.45rem 1.25rem;border-bottom:1px solid var(--border);flex-shrink:0;overflow-x:auto}
+.week-strip{display:flex;background:var(--bg);padding:.5rem max(1.25rem,var(--safe-left));padding-right:max(1.25rem,var(--safe-right));border-bottom:1px solid var(--border);flex-shrink:0;overflow-x:auto;gap:.2rem}
 .week-strip::-webkit-scrollbar{display:none}
-.wday{flex:1;min-width:38px;display:flex;flex-direction:column;align-items:center;gap:3px;padding:.35rem .1rem;border-radius:10px;cursor:pointer;transition:all .18s}
-.wd-name{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-light);font-weight:500}
-.wd-num{font-size:16px;font-weight:300;color:var(--ink-mid);font-family:'Cormorant Garamond',serif}
+.wday{flex:1;min-width:44px;display:flex;flex-direction:column;align-items:center;gap:4px;padding:.5rem .15rem;border-radius:13px;cursor:pointer;transition:all .18s}
+.wd-name{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);font-weight:500}
+.wd-num{font-size:22px;font-weight:300;color:var(--ink-mid);font-family:'Cormorant Garamond',serif;line-height:1}
 .wd-dot{width:4px;height:4px;border-radius:50%;background:transparent}
 .wday.has-data .wd-dot{background:var(--rose)}
-.wday.active{background:var(--wine);border-radius:11px}
-.wday.active .wd-name{color:rgba(255,255,255,.6)}
-.wday.active .wd-num{color:white}
+.wday.active{background:var(--wine);border-radius:13px}
+.wday.active .wd-name{color:rgba(255,255,255,.65)}
+.wday.active .wd-num{color:white;font-weight:400}
 .wday.today-mark:not(.active) .wd-num{color:var(--wine);font-weight:500}
 
 /* SCROLL */
-.scroll{flex:1;overflow-y:auto;padding:1rem 1.25rem calc(var(--safe-bottom)+68px);-webkit-overflow-scrolling:touch}
+.scroll{flex:1;overflow-y:auto;padding:1rem max(1.25rem,var(--safe-left)) calc(var(--safe-bottom)+72px);padding-right:max(1.25rem,var(--safe-right));-webkit-overflow-scrolling:touch}
 .panel{display:none}.panel.active{display:block}
 
 /* RINGS */
@@ -263,7 +267,7 @@ svg.ring{transform:rotate(-90deg)}
 .sec-lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mid);font-weight:500}
 
 /* BOTTOM NAV */
-.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:rgba(248,246,243,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--border);display:flex;padding-bottom:var(--safe-bottom)}
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:rgba(248,246,243,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--border);display:flex;padding-bottom:var(--safe-bottom);padding-left:var(--safe-left);padding-right:var(--safe-right)}
 .bnav-btn{flex:1;padding:.6rem 0;background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-light);transition:color .2s}
 .bnav-btn.active{color:var(--wine)}
 .bnav-icon{font-size:17px;line-height:1}
@@ -328,7 +332,7 @@ svg.ring{transform:rotate(-90deg)}
       <div class="mit-block" id="mit-block">
         <div class="mit-label">✦ most important task</div>
         <input class="mit-inp" id="mit-inp" placeholder="O que mais importa hoje?" oninput="saveMIT()">
-        <div class="mit-done-row">
+        <div class="mit-done-row" id="mit-done-row" style="display:none">
           <div class="mit-chk" id="mit-chk" onclick="toggleMIT()"></div>
           <span class="mit-sub" id="mit-sub">marcar como feita</span>
         </div>
@@ -756,6 +760,10 @@ function updateTopBar(){
   pill.textContent=isToday?'hoje':isPast?'passado':'futuro';
   pill.style.background=isToday?'var(--wine)':isPast?'var(--ink-light)':'var(--rose)';
   document.getElementById('mit-inp').readOnly=viewDate<realToday;
+  // keep week strip visible when in day view
+  if(currentView==='day'){
+    document.getElementById('week-strip').style.display='flex';
+  }
 }
 
 // VIEW TABS (today/weekly/monthly)
@@ -814,12 +822,19 @@ function updateRings(dk){
 
 // MIT
 let mitTimer;
-function saveMIT(){clearTimeout(mitTimer);mitTimer=setTimeout(()=>{getDay(viewDate).mit.text=document.getElementById('mit-inp').value;persist();},400);}
+function saveMIT(){
+  const val=document.getElementById('mit-inp').value;
+  document.getElementById('mit-done-row').style.display=val?'flex':'none';
+  clearTimeout(mitTimer);mitTimer=setTimeout(()=>{getDay(viewDate).mit.text=val;persist();},400);
+}
 function toggleMIT(){if(viewDate<realToday)return;const day=getDay(viewDate);day.mit.done=!day.mit.done;persist();restoreMIT();updateRings(viewDate);}
 function restoreMIT(){
   const day=getDay(viewDate);
-  document.getElementById('mit-inp').value=day.mit?.text||'';
+  const text=day.mit?.text||'';
+  document.getElementById('mit-inp').value=text;
   const chk=document.getElementById('mit-chk'),sub=document.getElementById('mit-sub');
+  const doneRow=document.getElementById('mit-done-row');
+  doneRow.style.display=text?'flex':'none';
   if(day.mit?.done){chk.classList.add('done');chk.textContent='✓';sub.textContent='feita! ✨';document.getElementById('mit-block').style.background='var(--wine-soft)';}
   else{chk.classList.remove('done');chk.textContent='';sub.textContent='marcar como feita';document.getElementById('mit-block').style.background='var(--wine)';}
 }
@@ -1086,8 +1101,9 @@ function switchView(v){
     const bn=document.getElementById('bnav-'+id);if(bn)bn.classList.toggle('active',id===v);
   });
   const isTodo=v==='todo';
+  const isDay=v==='day';
   document.getElementById('view-tabs').style.display=isTodo?'flex':'none';
-  document.getElementById('week-strip').style.display=(isTodo&&viewTab==='today')?'flex':'none';
+  document.getElementById('week-strip').style.display=(isDay||(isTodo&&viewTab==='today'))?'flex':'none';
   if(v==='notes')renderNotes();
   if(v==='atelier')renderAtelier();
   if(v==='manif')renderManif();
