@@ -26,13 +26,13 @@
 }
 html,body{height:100%;overflow:hidden} html{padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px);}
 body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;display:flex;flex-direction:column}
-/* Force ALL content 24px from edges on iPhone */
-.scroll > * { max-width: 100%; }
 .topbar, .week-strip, .view-tabs, .bottom-nav { box-sizing: border-box; }
+/* Inner content wrapper — creates visible margin from screen edges */
+.inner{width:calc(100% - 48px);margin:0 auto;}
 .app{display:flex;flex-direction:column;height:100%;max-width:480px;margin:0 auto;width:100%;position:relative;padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
 
 /* TOPBAR */
-.topbar{padding:calc(var(--safe-top)+12px) 32px 10px;display:flex;align-items:center;justify-content:space-between;background:var(--bg);border-bottom:1px solid var(--border);flex-shrink:0}
+.topbar{padding:calc(var(--safe-top)+12px) 0 10px;display:flex;justify-content:center;background:var(--bg);border-bottom:1px solid var(--border);flex-shrink:0}
 .app-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--ink)}
 .app-name em{font-style:italic;color:var(--wine)}
 .topbar-date{font-size:11px;color:var(--ink-light);letter-spacing:.1em;text-transform:uppercase;margin-top:1px}
@@ -41,12 +41,12 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink);font-we
 .day-pill{font-size:10px;padding:3px 10px;border-radius:10px;background:var(--wine);color:white;font-weight:500;cursor:pointer;border:none;font-family:'Jost',sans-serif}
 
 /* TODAY/WEEKLY/MONTHLY TABS */
-.view-tabs{display:flex;background:var(--bg);padding:.55rem 32px .4rem;gap:.5rem;border-bottom:1px solid var(--border);flex-shrink:0}
+.view-tabs{display:flex;background:transparent;padding:0;gap:.5rem;border:none;flex-shrink:0;width:100%}
 .view-tab{flex:1;text-align:center;padding:.4rem 0;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);font-weight:500;cursor:pointer;border-radius:8px;transition:all .2s;background:none;border:none;font-family:'Jost',sans-serif}
 .view-tab.active{background:var(--wine);color:white}
 
 /* WEEK STRIP */
-.week-strip{display:flex;background:var(--bg);padding:.5rem 32px;border-bottom:1px solid var(--border);flex-shrink:0;overflow-x:auto;gap:.2rem}
+.week-strip{display:flex;background:var(--bg);padding:0;border:none;flex-shrink:0;overflow-x:auto;gap:.2rem}
 .week-strip::-webkit-scrollbar{display:none}
 .wday{flex:1;min-width:44px;display:flex;flex-direction:column;align-items:center;gap:4px;padding:.5rem .15rem;border-radius:13px;cursor:pointer;transition:all .18s}
 .wd-name{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);font-weight:500}
@@ -59,7 +59,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink);font-we
 .wday.today-mark:not(.active) .wd-num{color:var(--wine);font-weight:500}
 
 /* SCROLL */
-.scroll{flex:1;overflow-y:auto;padding:1rem 32px calc(var(--safe-bottom)+72px) 32px;-webkit-overflow-scrolling:touch}
+.scroll{flex:1;overflow-y:auto;padding:1rem 24px calc(var(--safe-bottom)+72px) 24px;-webkit-overflow-scrolling:touch}
 .panel{display:none}.panel.active{display:block}
 
 /* RINGS */
@@ -283,26 +283,30 @@ svg.ring{transform:rotate(-90deg)}
 <div class="app">
 
   <div class="topbar">
-    <div>
-      <div class="app-name">meu <em>dia</em></div>
-      <div class="topbar-date" id="topbar-date"></div>
-    </div>
-    <div class="nav-row">
-      <button class="nav-btn" onclick="shiftDay(-1)">‹</button>
-      <button class="day-pill" id="day-pill" onclick="goToday()">hoje</button>
-      <button class="nav-btn" onclick="shiftDay(1)">›</button>
+    <div class="inner" style="display:flex;align-items:center;justify-content:space-between;width:calc(100% - 48px)">
+      <div>
+        <div class="app-name">meu <em>dia</em></div>
+        <div class="topbar-date" id="topbar-date"></div>
+      </div>
+      <div class="nav-row">
+        <button class="nav-btn" onclick="shiftDay(-1)">‹</button>
+        <button class="day-pill" id="day-pill" onclick="goToday()">hoje</button>
+        <button class="nav-btn" onclick="shiftDay(1)">›</button>
+      </div>
     </div>
   </div>
 
   <!-- TODAY / WEEKLY / MONTHLY -->
-  <div class="view-tabs" id="view-tabs">
+  <div style="display:flex;justify-content:center;background:var(--bg);padding:.55rem 0 .4rem;border-bottom:1px solid var(--border);flex-shrink:0" id="view-tabs-outer"><div class="view-tabs inner" id="view-tabs" style="width:calc(100% - 48px);padding:0;border:none">
     <button class="view-tab active" id="vtab-today" onclick="setViewTab('today')">Today</button>
     <button class="view-tab" id="vtab-weekly" onclick="setViewTab('weekly')">Weekly</button>
     <button class="view-tab" id="vtab-monthly" onclick="setViewTab('monthly')">Monthly</button>
-  </div>
+  </div></div>
 
   <!-- WEEK STRIP (only on today tab) -->
-  <div class="week-strip" id="week-strip"></div>
+  <div class="week-strip" id="week-strip-outer" style="display:flex;justify-content:center;background:var(--bg);padding:.5rem 0;border-bottom:1px solid var(--border);flex-shrink:0;overflow:hidden">
+    <div class="week-strip inner" id="week-strip" style="width:calc(100% - 48px);margin:0 auto;padding:0;border:none;overflow-x:auto;display:flex;gap:.2rem"></div>
+  </div>
 
   <div class="scroll" id="scroll">
 
@@ -682,12 +686,14 @@ svg.ring{transform:rotate(-90deg)}
     <textarea class="ne-body" id="ne-body" placeholder="Escreva aqui…"></textarea>
   </div>
 
-  <div class="bottom-nav">
-    <button class="bnav-btn active" id="bnav-day" onclick="switchView('day')"><span class="bnav-icon">⌂</span>Dia</button>
-    <button class="bnav-btn" id="bnav-content" onclick="switchView('content')"><span class="bnav-icon">📷</span>Content</button>
-    <button class="bnav-btn" id="bnav-todo" onclick="switchView('todo')"><span class="bnav-icon">☑</span>To Do</button>
-    <button class="bnav-btn" id="bnav-atelier" onclick="switchView('atelier')"><span class="bnav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="3"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/><circle cx="12" cy="14" r="3"/></svg></span>Atelier</button>
-    <button class="bnav-btn" id="bnav-manif" onclick="switchView('manif')"><span class="bnav-icon">✨</span>Wealth</button>
+  <div class="bottom-nav" style="padding-left:0;padding-right:0">
+    <div class="inner" style="display:flex;width:calc(100% - 48px);margin:0 auto">
+      <button class="bnav-btn active" id="bnav-day" onclick="switchView('day')" style="flex:1"><span class="bnav-icon">⌂</span>Dia</button>
+      <button class="bnav-btn" id="bnav-content" onclick="switchView('content')" style="flex:1"><span class="bnav-icon">📷</span>Content</button>
+      <button class="bnav-btn" id="bnav-todo" onclick="switchView('todo')" style="flex:1"><span class="bnav-icon">☑</span>To Do</button>
+      <button class="bnav-btn" id="bnav-atelier" onclick="switchView('atelier')" style="flex:1"><span class="bnav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="3"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/><circle cx="12" cy="14" r="3"/></svg></span>Atelier</button>
+      <button class="bnav-btn" id="bnav-manif" onclick="switchView('manif')" style="flex:1"><span class="bnav-icon">✨</span>Wealth</button>
+    </div>
   </div>
 </div>
 
