@@ -28,11 +28,11 @@ html,body{height:100%;overflow:hidden} html{padding-left:env(safe-area-inset-lef
 body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;display:flex;flex-direction:column}
 .topbar, .week-strip, .view-tabs, .bottom-nav { box-sizing: border-box; }
 /* Inner content wrapper — creates visible margin from screen edges */
-.inner{width:calc(100% - 48px);margin:0 auto;}
+
 .app{display:flex;flex-direction:column;height:100%;max-width:480px;margin:0 auto;width:100%;position:relative;padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
 
 /* TOPBAR */
-.topbar{padding:calc(var(--safe-top)+12px) 0 10px;display:flex;justify-content:center;background:var(--bg);border-bottom:1px solid var(--border);flex-shrink:0}
+.topbar{padding:calc(var(--safe-top)+12px) 28px 10px;display:flex;align-items:center;justify-content:space-between;background:var(--bg);border-bottom:1px solid var(--border);flex-shrink:0}
 .app-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--ink)}
 .app-name em{font-style:italic;color:var(--wine)}
 .topbar-date{font-size:11px;color:var(--ink-light);letter-spacing:.1em;text-transform:uppercase;margin-top:1px}
@@ -41,12 +41,12 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink);font-we
 .day-pill{font-size:10px;padding:3px 10px;border-radius:10px;background:var(--wine);color:white;font-weight:500;cursor:pointer;border:none;font-family:'Jost',sans-serif}
 
 /* TODAY/WEEKLY/MONTHLY TABS */
-.view-tabs{display:flex;background:transparent;padding:0;gap:.5rem;border:none;flex-shrink:0;width:100%}
+.view-tabs{display:flex;background:var(--bg);padding:.55rem 28px .4rem;gap:.5rem;border-bottom:1px solid var(--border);flex-shrink:0}
 .view-tab{flex:1;text-align:center;padding:.4rem 0;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);font-weight:500;cursor:pointer;border-radius:8px;transition:all .2s;background:none;border:none;font-family:'Jost',sans-serif}
 .view-tab.active{background:var(--wine);color:white}
 
 /* WEEK STRIP */
-.week-strip{display:flex;background:var(--bg);padding:0;border:none;flex-shrink:0;overflow-x:auto;gap:.2rem}
+.week-strip{display:flex;background:var(--bg);padding:.5rem 28px;border-bottom:1px solid var(--border);flex-shrink:0;overflow-x:auto;gap:.2rem}
 .week-strip::-webkit-scrollbar{display:none}
 .wday{flex:1;min-width:44px;display:flex;flex-direction:column;align-items:center;gap:4px;padding:.5rem .15rem;border-radius:13px;cursor:pointer;transition:all .18s}
 .wd-name{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);font-weight:500}
@@ -59,11 +59,11 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink);font-we
 .wday.today-mark:not(.active) .wd-num{color:var(--wine);font-weight:500}
 
 /* SCROLL */
-.scroll{flex:1;overflow-y:auto;padding:1rem 24px calc(var(--safe-bottom)+72px) 24px;-webkit-overflow-scrolling:touch}
+.scroll{flex:1;overflow-y:auto;padding:1rem 28px calc(var(--safe-bottom)+72px) 28px;-webkit-overflow-scrolling:touch}
 .panel{display:none}.panel.active{display:block}
 
 /* RINGS */
-.rings-row{display:flex;gap:1.1rem;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:.85rem 1rem;margin-bottom:.8rem}
+.rings-row{display:flex;gap:1.1rem;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:.85rem 1rem;margin-bottom:.8rem;margin-left:2px;margin-right:2px}
 .ring-item{display:flex;flex-direction:column;align-items:center;gap:.2rem;position:relative}
 svg.ring{transform:rotate(-90deg)}
 .ring-bg{fill:none;stroke:var(--border);stroke-width:3}
@@ -78,7 +78,7 @@ svg.ring{transform:rotate(-90deg)}
 .rstat-l{color:var(--ink-mid)}.rstat-v{color:var(--ink);font-weight:500}
 
 /* MIT */
-.mit-block{background:var(--wine);border-radius:14px;padding:.9rem 1.1rem;margin-bottom:.8rem;position:relative;overflow:hidden}
+.mit-block{background:var(--wine);border-radius:14px;padding:.9rem 1.1rem;margin-bottom:.8rem;margin-left:2px;margin-right:2px;position:relative;overflow:hidden}
 .mit-block::after{content:'"';position:absolute;right:10px;top:-8px;font-size:72px;color:rgba(255,255,255,.06);font-family:'Cormorant Garamond',serif}
 .mit-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.32rem;font-weight:500}
 .mit-inp{background:none;border:none;outline:none;font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:white;width:100%;font-style:italic;line-height:1.4}
@@ -89,7 +89,7 @@ svg.ring{transform:rotate(-90deg)}
 .mit-sub{font-size:11px;color:rgba(255,255,255,.45)}
 
 /* SECTION CARD */
-.sec-card{background:var(--white);border:1px solid var(--border);border-radius:14px;margin-bottom:.7rem;overflow:hidden}
+.sec-card{background:var(--white);border:1px solid var(--border);border-radius:14px;margin-bottom:.7rem;margin-left:2px;margin-right:2px}
 .sec-card-head{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem .55rem}
 .sec-card-title{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mid);font-weight:500}
 .sec-card-right{display:flex;align-items:center;gap:.55rem}
@@ -253,13 +253,13 @@ svg.ring{transform:rotate(-90deg)}
 .fav-text{font-size:13px;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--wine);flex:1;line-height:1.5}
 .fav-del{background:none;border:none;cursor:pointer;color:var(--rose-light);font-size:15px;opacity:0;transition:opacity .2s}
 .fav-card:hover .fav-del{opacity:1}
-.tema-row{display:flex;gap:.32rem;flex-wrap:wrap;margin-bottom:.65rem}
-.tema-chip{padding:.26rem .68rem;border-radius:20px;border:1px solid var(--border);background:var(--white);font-size:11px;cursor:pointer;color:var(--ink-mid);transition:all .2s;font-family:'Jost',sans-serif}
-.tema-chip.active{background:var(--rose-pale);border-color:var(--rose-light);color:var(--wine);font-weight:500}
-.banco-card{background:var(--white);border:1px solid var(--border);border-radius:13px;padding:.68rem .95rem;margin-bottom:.32rem;display:flex;align-items:flex-start;gap:.55rem}
-.banco-text{font-size:13px;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink);flex:1;line-height:1.5}
-.banco-add{background:none;border:none;cursor:pointer;color:var(--ink-light);font-size:20px;transition:color .2s;line-height:1;flex-shrink:0}
-.banco-add:hover{color:var(--wine)}
+
+
+
+
+
+
+
 
 .add-area{display:flex;gap:.4rem;background:var(--white);border-radius:11px;padding:.45rem .82rem;border:1px solid var(--border);transition:border-color .2s;margin-top:.45rem}
 .add-area:focus-within{border-color:var(--rose-light)}
@@ -270,45 +270,41 @@ svg.ring{transform:rotate(-90deg)}
 .sec-lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mid);font-weight:500}
 
 /* BOTTOM NAV */
-.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:rgba(248,246,243,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--border);display:flex;padding-bottom:var(--safe-bottom);padding-left:32px;padding-right:32px}
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:rgba(248,246,243,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--border);display:flex;padding-bottom:var(--safe-bottom)}
 .bnav-btn{flex:1;padding:.6rem 0;background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-light);transition:color .2s}
 .bnav-btn.active{color:var(--wine)}
 .bnav-icon{font-size:17px;line-height:1}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
-.sec-card,.note-card,.atelier-card,.afirm-card,.banco-card,.weekly-day{animation:fadeUp .2s ease both}
+.sec-card,.note-card,.atelier-card,.afirm-card,.weekly-day{animation:fadeUp .2s ease both}
 </style>
 </head>
 <body>
 <div class="app">
 
-  <div class="topbar">
-    <div class="inner" style="display:flex;align-items:center;justify-content:space-between;width:calc(100% - 48px)">
-      <div>
-        <div class="app-name">meu <em>dia</em></div>
-        <div class="topbar-date" id="topbar-date"></div>
-      </div>
-      <div class="nav-row">
-        <button class="nav-btn" onclick="shiftDay(-1)">‹</button>
-        <button class="day-pill" id="day-pill" onclick="goToday()">hoje</button>
-        <button class="nav-btn" onclick="shiftDay(1)">›</button>
-      </div>
+  <div class="topbar" style="padding-left:28px;padding-right:28px">
+    <div>
+      <div class="app-name">meu <em>dia</em></div>
+      <div class="topbar-date" id="topbar-date"></div>
+    </div>
+    <div class="nav-row">
+      <button class="nav-btn" onclick="shiftDay(-1)">‹</button>
+      <button class="day-pill" id="day-pill" onclick="goToday()">hoje</button>
+      <button class="nav-btn" onclick="shiftDay(1)">›</button>
     </div>
   </div>
 
   <!-- TODAY / WEEKLY / MONTHLY -->
-  <div style="display:flex;justify-content:center;background:var(--bg);padding:.55rem 0 .4rem;border-bottom:1px solid var(--border);flex-shrink:0" id="view-tabs-outer"><div class="view-tabs inner" id="view-tabs" style="width:calc(100% - 48px);padding:0;border:none">
+  <div class="view-tabs" id="view-tabs" style="padding-left:28px;padding-right:28px">
     <button class="view-tab active" id="vtab-today" onclick="setViewTab('today')">Today</button>
     <button class="view-tab" id="vtab-weekly" onclick="setViewTab('weekly')">Weekly</button>
     <button class="view-tab" id="vtab-monthly" onclick="setViewTab('monthly')">Monthly</button>
-  </div></div>
-
-  <!-- WEEK STRIP (only on today tab) -->
-  <div class="week-strip" id="week-strip-outer" style="display:flex;justify-content:center;background:var(--bg);padding:.5rem 0;border-bottom:1px solid var(--border);flex-shrink:0;overflow:hidden">
-    <div class="week-strip inner" id="week-strip" style="width:calc(100% - 48px);margin:0 auto;padding:0;border:none;overflow-x:auto;display:flex;gap:.2rem"></div>
   </div>
 
-  <div class="scroll" id="scroll">
+  <!-- WEEK STRIP (only on today tab) -->
+  <div class="week-strip" id="week-strip" style="padding-left:28px;padding-right:28px"></div>
+
+  <div class="scroll" id="scroll" style="padding-left:28px;padding-right:28px">
 
     <!-- DIA / TODAY -->
     <div id="panel-day" class="panel active">
@@ -628,16 +624,7 @@ svg.ring{transform:rotate(-90deg)}
       <div class="divider"></div>
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.58rem"><span class="sec-lbl">Favoritas</span><span style="font-size:11px;color:var(--ink-light)" id="fav-count"></span></div>
       <div id="fav-list"></div>
-      <div class="divider"></div>
-      <div style="margin-bottom:.58rem"><span class="sec-lbl">Banco de frases</span></div>
-      <div class="tema-row">
-        <button class="tema-chip active" onclick="setTema('todas',this)">Todas</button>
-        <button class="tema-chip" onclick="setTema('fe',this)">🙏 Fé</button>
-        <button class="tema-chip" onclick="setTema('abundancia',this)">💰 Abundância</button>
-        <button class="tema-chip" onclick="setTema('proposito',this)">🎯 Propósito</button>
-        <button class="tema-chip" onclick="setTema('negocio',this)">🚀 Negócio</button>
-      </div>
-      <div id="banco-list"></div>
+
     </div>
 
   </div><!-- /scroll -->
@@ -686,14 +673,12 @@ svg.ring{transform:rotate(-90deg)}
     <textarea class="ne-body" id="ne-body" placeholder="Escreva aqui…"></textarea>
   </div>
 
-  <div class="bottom-nav" style="padding-left:0;padding-right:0">
-    <div class="inner" style="display:flex;width:calc(100% - 48px);margin:0 auto">
-      <button class="bnav-btn active" id="bnav-day" onclick="switchView('day')" style="flex:1"><span class="bnav-icon">⌂</span>Dia</button>
-      <button class="bnav-btn" id="bnav-content" onclick="switchView('content')" style="flex:1"><span class="bnav-icon">📷</span>Content</button>
-      <button class="bnav-btn" id="bnav-todo" onclick="switchView('todo')" style="flex:1"><span class="bnav-icon">☑</span>To Do</button>
-      <button class="bnav-btn" id="bnav-atelier" onclick="switchView('atelier')" style="flex:1"><span class="bnav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="3"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/><circle cx="12" cy="14" r="3"/></svg></span>Atelier</button>
-      <button class="bnav-btn" id="bnav-manif" onclick="switchView('manif')" style="flex:1"><span class="bnav-icon">✨</span>Wealth</button>
-    </div>
+  <div class="bottom-nav">
+    <button class="bnav-btn active" id="bnav-day" onclick="switchView('day')"><span class="bnav-icon">⌂</span>Dia</button>
+    <button class="bnav-btn" id="bnav-content" onclick="switchView('content')"><span class="bnav-icon">📷</span>Content</button>
+    <button class="bnav-btn" id="bnav-todo" onclick="switchView('todo')"><span class="bnav-icon">☑</span>To Do</button>
+    <button class="bnav-btn" id="bnav-atelier" onclick="switchView('atelier')"><span class="bnav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="3"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/><circle cx="12" cy="14" r="3"/></svg></span>Atelier</button>
+    <button class="bnav-btn" id="bnav-manif" onclick="switchView('manif')"><span class="bnav-icon">✨</span>Wealth</button>
   </div>
 </div>
 
@@ -704,32 +689,7 @@ const DAYS_S=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
 const MONTHS=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
 const MONTHS_S=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
 
-const BANCO_FRASES = [
-  // FÉ / Mente subconsciente
-  {text:'Meu subconsciente aceita agora a ideia de prosperidade e a manifesta em minha vida.', tema:'fe'},
-  {text:'A inteligência infinita dentro de mim me guia, me protege e abre os caminhos certos.', tema:'fe'},
-  {text:'Eu entrego meus desejos ao poder do meu subconsciente e confio que ele os realiza.', tema:'fe'},
-  {text:'Deus é a fonte inesgotável de tudo que preciso — e eu estou aberta para receber.', tema:'fe'},
-  {text:'O poder que criou o universo está agindo a meu favor agora e sempre.', tema:'fe'},
-  // ABUNDÂNCIA / Reprogramação
-  {text:'Minha mente subconsciente atrai riqueza, oportunidades e pessoas certas para mim.', tema:'abundancia'},
-  {text:'Eu imprimo agora na minha mente subconsciente: sou próspera, rica e livre.', tema:'abundancia'},
-  {text:'O dinheiro flui para mim em avalanches de abundância — minha mente aceita isso como verdade.', tema:'abundancia'},
-  {text:'Eu mereço e aceito toda a riqueza que a vida tem a me oferecer.', tema:'abundancia'},
-  {text:'Meu subconsciente trabalha 24 horas por dia para realizar minha prosperidade.', tema:'abundancia'},
-  // PROPÓSITO / Neurociência
-  {text:'Cada pensamento que penso com fé se torna realidade através da minha mente subconsciente.', tema:'proposito'},
-  {text:'Eu reprogramo minha mente agora: sou focada, consistente e altamente produtiva.', tema:'proposito'},
-  {text:'Meus neurônios se reorganizam a cada dia para me aproximar dos meus maiores objetivos.', tema:'proposito'},
-  {text:'Eu visualizo meu sucesso com clareza — e minha mente subconsciente o torna inevitável.', tema:'proposito'},
-  {text:'O que eu afirmo com convicção, minha mente aceita como lei e manifesta no mundo físico.', tema:'proposito'},
-  // NEGÓCIO
-  {text:'Meu negócio é um canal de bênção — ele prospera porque eu sirvo com excelência.', tema:'negocio'},
-  {text:'Eu imprimo na minha mente: meu conteúdo transforma vidas e gera riqueza genuína.', tema:'negocio'},
-  {text:'As ideias certas surgem para mim no momento certo — minha mente criativa está sempre ativa.', tema:'negocio'},
-  {text:'Cada ação que tomo hoje planta uma semente que minha mente subconsciente faz florescer.', tema:'negocio'},
-  {text:'Eu sou uma empreendedora de sucesso — essa verdade está gravada na minha mente agora.', tema:'negocio'},
-];
+
 
 let S={days:{},notes:[],atelier:[],manifesto:{favs:[],afirms:[],dias:{}}};
 const realToday=new Date().toISOString().slice(0,10);
@@ -742,12 +702,17 @@ let detailDk=null,detailType=null,detailIdx=null;
 let atelierCat='',atelierImgData='',atelierDetailIdx=null;
 
 async function loadState(){
-  try{const r=await window.storage.get('pm_v6');if(r){const l=JSON.parse(r.value);S={...S,...l};}}catch(e){}
+  try{const r=await window.storage.get('pm_v6');if(r){const l=JSON.parse(r.value);S={...S,...l};}}catch(e){
+    try{const b=localStorage.getItem('pm_v6_backup');if(b){const l=JSON.parse(b);S={...S,...l};}}catch(e2){}
+  }
   if(!S.days)S.days={};if(!S.notes)S.notes=[];if(!S.atelier)S.atelier=[];
   if(!S.manifesto)S.manifesto={favs:[],afirms:[],dias:{}};
   render();
 }
-async function persist(){try{await window.storage.set('pm_v6',JSON.stringify(S));}catch(e){}}
+async function persist(){
+  try{await window.storage.set('pm_v6',JSON.stringify(S));}catch(e){}
+  try{localStorage.setItem('pm_v6_backup',JSON.stringify(S));}catch(e){}
+}
 
 function getDay(dk){
   if(!S.days[dk])S.days[dk]={todo:[],content:[],actions:[],mit:{text:'',done:false}};
@@ -855,8 +820,14 @@ const INPS={todo:'inp-todo',content:'inp-content',actions:'inp-actions'};
 
 function toggleForm(type){
   const f=document.getElementById(FORMS[type]);
-  f.style.display=f.style.display==='none'?'block':'none';
-  if(f.style.display==='block')document.getElementById(INPS[type]).focus();
+  const isHidden=f.style.display==='none'||f.style.display==='';
+  f.style.display=isHidden?'block':'none';
+  if(isHidden){
+    setTimeout(()=>{
+      const inp=document.getElementById(INPS[type]);
+      if(inp){inp.focus();}
+    },100);
+  }
 }
 function togglePri(type){
   priStates[type]=!priStates[type];
@@ -1083,6 +1054,28 @@ function closeAtelierDetail(){document.getElementById('atelier-detail').classLis
 function deleteAtelierItem(){if(atelierDetailIdx===null)return;S.atelier.splice(atelierDetailIdx,1);persist();renderAtelier();closeAtelierDetail();}
 
 // MANIFESTO
+const BANCO_FRASES = [
+  {text:'Meu subconsciente aceita agora a ideia de prosperidade e a manifesta em minha vida.', tema:'fe'},
+  {text:'A inteligência infinita dentro de mim me guia, me protege e abre os caminhos certos.', tema:'fe'},
+  {text:'Minha mente subconsciente atrai riqueza, oportunidades e pessoas certas para mim.', tema:'abundancia'},
+  {text:'Eu imprimo agora na minha mente subconsciente: sou próspera, rica e livre.', tema:'abundancia'},
+  {text:'Cada pensamento que penso com fé se torna realidade através da minha mente subconsciente.', tema:'proposito'},
+  {text:'Eu reprogramo minha mente agora: sou focada, consistente e altamente produtiva.', tema:'proposito'},
+  {text:'Meu negócio é um canal de bênção — ele prospera porque eu sirvo com excelência.', tema:'negocio'},
+  {text:'Sou guiada por uma força maior que organiza tudo para o meu bem.', tema:'fe'},
+  {text:'O dinheiro flui para mim em avalanches de abundância — minha mente aceita isso como verdade.', tema:'abundancia'},
+  {text:'Eu visualizo meu sucesso com clareza — e minha mente subconsciente o torna inevitável.', tema:'proposito'},
+  {text:'Cada ação que tomo hoje planta uma semente que minha mente subconsciente faz florescer.', tema:'negocio'},
+  {text:'Deus é a fonte inesgotável de tudo que preciso — e eu estou aberta para receber.', tema:'fe'},
+  {text:'Eu mereço e aceito toda a riqueza que a vida tem a me oferecer.', tema:'abundancia'},
+  {text:'Meus neurônios se reorganizam a cada dia para me aproximar dos meus maiores objetivos.', tema:'proposito'},
+  {text:'Eu sou uma empreendedora de sucesso — essa verdade está gravada na minha mente agora.', tema:'negocio'},
+  {text:'O poder que criou o universo está agindo a meu favor agora e sempre.', tema:'fe'},
+  {text:'Meu subconsciente trabalha 24 horas por dia para realizar minha prosperidade.', tema:'abundancia'},
+  {text:'O que eu afirmo com convicção, minha mente aceita como lei e manifesta no mundo físico.', tema:'proposito'},
+  {text:'As ideias certas surgem para mim no momento certo — minha mente criativa está sempre ativa.', tema:'negocio'},
+  {text:'Eu opero com fé — não com medo. Sou guiada, protegida e abençoada.', tema:'fe'},
+];
 function getFraseIdx(){const d=new Date(viewDate+'T12:00');return(d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate())%BANCO_FRASES.length;}
 function renderFraseDia(){const f=BANCO_FRASES[fraseIdx%BANCO_FRASES.length];document.getElementById('mf-text').textContent=f.text;const faved=(S.manifesto?.favs||[]).includes(f.text);const btn=document.getElementById('mf-fav-btn');btn.textContent=faved?'♥ favoritada':'♡ favoritar';btn.className='mf-btn mf-fav'+(faved?' faved':'');}
 function proximaFrase(){fraseIdx=(fraseIdx+1)%BANCO_FRASES.length;renderFraseDia();}
@@ -1095,10 +1088,8 @@ function removeAfirm(i){S.manifesto.afirms.splice(i,1);persist();renderAfirms();
 function renderAfirms(){const list=document.getElementById('afirm-list');const afirms=S.manifesto?.afirms||[];document.getElementById('afirm-count').textContent=afirms.filter(a=>a.read).length+' de '+afirms.length;list.innerHTML='';if(!afirms.length){list.innerHTML='<div style="padding:.45rem 0;font-size:13px;color:var(--ink-light);font-family:Cormorant Garamond,serif;font-style:italic">Escreva afirmações que resonam com você.</div>';return;}afirms.forEach((a,i)=>{const card=document.createElement('div');card.className='afirm-card'+(a.read?' read':'');card.innerHTML=`<div class="afirm-chk" onclick="toggleAfirm(${i})">${a.read?'✓':''}</div><span class="afirm-text">${a.text}</span><button style="background:none;border:none;cursor:pointer;color:var(--ink-light);font-size:16px;opacity:0;transition:opacity .2s;padding:0 2px" onmouseenter="this.style.opacity=1" onmouseleave="this.style.opacity=0" onclick="removeAfirm(${i})">×</button>`;list.appendChild(card);});}
 function removeFav(i){S.manifesto.favs.splice(i,1);persist();renderFavs();renderFraseDia();}
 function renderFavs(){const list=document.getElementById('fav-list');const favs=S.manifesto?.favs||[];document.getElementById('fav-count').textContent=favs.length;list.innerHTML='';if(!favs.length){list.innerHTML='<div style="padding:.45rem 0;font-size:13px;color:var(--ink-light);font-family:Cormorant Garamond,serif;font-style:italic">Favorite frases que te tocam ♥</div>';return;}favs.forEach((f,i)=>{const card=document.createElement('div');card.className='fav-card';card.innerHTML=`<span style="color:var(--rose);font-size:14px;flex-shrink:0">♥</span><span class="fav-text">${f}</span><button class="fav-del" onmouseenter="this.style.opacity=1" onmouseleave="this.style.opacity=0" onclick="removeFav(${i})">×</button>`;list.appendChild(card);});}
-function setTema(tema,btn){temaAtual=tema;document.querySelectorAll('.tema-chip').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderBanco();}
-function addFromBanco(text){if(!S.manifesto.afirms)S.manifesto.afirms=[];if(S.manifesto.afirms.some(a=>a.text===text))return;S.manifesto.afirms.push({text,read:false});persist();renderAfirms();}
-function renderBanco(){const list=document.getElementById('banco-list');const frases=temaAtual==='todas'?BANCO_FRASES:BANCO_FRASES.filter(f=>f.tema===temaAtual);list.innerHTML='';frases.forEach(f=>{const card=document.createElement('div');card.className='banco-card';card.innerHTML=`<span class="banco-text">${f.text}</span><button class="banco-add" onclick="addFromBanco('${f.text.replace(/'/g,"\'")}')">+</button>`;list.appendChild(card);});}
-function renderManif(){fraseIdx=getFraseIdx();renderFraseDia();restoreManif();renderAfirms();renderFavs();renderBanco();}
+
+function renderManif(){fraseIdx=getFraseIdx();renderFraseDia();restoreManif();renderAfirms();renderFavs();}
 
 // NAV
 function shiftDay(n){viewDate=dateAdd(viewDate,n);renderDay();}
@@ -1133,8 +1124,14 @@ function renderDay(){
 let priState2 = false;
 function toggleForm2(type){
   const f=document.getElementById('form2-'+type);
-  f.style.display=f.style.display==='none'?'block':'none';
-  if(f.style.display==='block')document.getElementById('inp2-'+type).focus();
+  const isHidden=f.style.display==='none'||f.style.display==='';
+  f.style.display=isHidden?'block':'none';
+  if(isHidden){
+    setTimeout(()=>{
+      const inp=document.getElementById('inp2-'+type);
+      if(inp){inp.focus();}
+    },100);
+  }
 }
 function togglePri2(){
   priState2=!priState2;
